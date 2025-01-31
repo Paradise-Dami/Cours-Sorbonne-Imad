@@ -24,9 +24,9 @@ float prixEntree(int nbAdultes, int nbEnfants) {
 
 
 int main() {
-    printf("prixEntree(%d,%d) = %f\n", 2, 3, prixEntree(2,3));
-    printf("prixEntree(%d,%d) = %f\n", 2, 2, prixEntree(2,2));
-    printf("prixEntree(%d,%d) = %f\n", 2, 1, prixEntree(2,1));
-    printf("prixEntree(%d,%d) = %f\n", 1, 3, prixEntree(1,3));
+    printf("prixEntree(%d,%d) = %0.1f\n", 2, 3, prixEntree(2,3));
+    printf("prixEntree(%d,%d) = %0.1f\n", 2, 2, prixEntree(2,2));
+    printf("prixEntree(%d,%d) = %0.1f\n", 2, 1, prixEntree(2,1));
+    printf("prixEntree(%d,%d) = %0.1f\n", 1, 3, prixEntree(1,3));
     return 0;
 }

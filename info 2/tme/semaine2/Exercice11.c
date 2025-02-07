@@ -16,16 +16,17 @@ int jours(int nbConta, int popTotale, float etreInfecte) {
 
 //question 2
 
-float pourcentage(int nbConta, int popTotale, int nbJours) {
-    int i;
-    for (i=0;i<=popTotale;i++) {
-        printf("%d,%f\n",jours(nbConta,popTotale,i/100.0),i/100.0);
-        if (jours(nbConta,popTotale,i/100.0)==nbJours) {
-            return i/100.0;
+float pourcentage(int x, int population, int jours_etudies) {
+    int contamines = 1;
+    
+    for (int i = 0; i < jours_etudies; i++) {
+        contamines += contamines * x;
+        if (contamines >= population) {
+            return 100.0; // On ne peut pas dépasser 100% de la population
         }
     }
-    return -1.0;
-
+    
+    return (contamines * 100.0) / population;
 }
 
 int main() {

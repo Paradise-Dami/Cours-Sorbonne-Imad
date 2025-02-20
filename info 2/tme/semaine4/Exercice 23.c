@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-#define MAXTAB 1
+#define MAXTAB 31
 #define MAX 300
 #define MIN -200
 
@@ -18,15 +18,14 @@ void init_temp(float *tab, int min, int max, int lentab)
 // question 2
 float moy_temp(float *tab, int lentab)
 {
-    int moyenneFinale = 0;
+    float moyenneFinale = 0;
     for (int i = 0; i < lentab; i++)
     {
         moyenneFinale = moyenneFinale + tab[i];
     }
-    return (moyenneFinale*1.0 / lentab*1.0);
+    float moyenne = moyenneFinale/lentab; 
+    return moyenne;
 }
-
-//Question 2, problème, la fraction donne une valeur entière
 
 // question 3
 
@@ -47,8 +46,11 @@ float moyenne_temp_negatif(float *tab, int lentab)
         printf("Aucune temperature au-dessous de zero\n");
         return -1;
     }
-    return (((float)temp)/nbJoursNegatifs);
+    float moyenne = temp/nbJoursNegatifs; 
+    return moyenne;
 }
+
+//same
 
 int main()
 {

@@ -9,7 +9,7 @@ void echange(int *v1, int *v2)
 }
 
 // question 2
-void tri(int *a, int *b)
+void tri_croissant(int *a, int *b)
 {
     if (!((*a)<(*b))) {
         echange(a,b);

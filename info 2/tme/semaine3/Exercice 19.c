@@ -21,18 +21,65 @@ void min_max(int val, int *min, int *max)
 // question 2
 void stats(int a, int b, int c, int d, int *min, int *max, float *moyenne)
 {
-  *moyenne = ((float)(a + b + c + d)) / 4;
-  if (a < b)
+  if ((a > 0) && (b > 0) && (c > 0) && (d > 0))
   {
-    min_max(b, &a, &d);
-    min_max(c, &a, &d);
-  } else {
-    min_max(b, &d, &a);
-    min_max(c, &d, &a);
+    *moyenne = ((float)(a + b + c + d)) / 4;
+    if (a < b)
+    {
+      min_max(c, &a, &b);
+      min_max(d, &a, &b);
+    }
+    else
+    {
+      min_max(c, &b, &a);
+      min_max(d, &b, &a);
+    }
+    *min = a;
+    *max = d;
   }
-  *min = a;
-  *max = d;
-  // dabc
+  else if ((a > 0) && (b > 0) && (c > 0) && (d <= 0))
+  {
+    *moyenne = ((float)(a + b + c)) / 3;
+    if (a < b)
+    {
+      min_max(c, &a, &b);
+      *min = c;
+      *max = a;
+    }
+    else
+    {
+      min_max(c, &b, &a);
+      *min = a;
+      *max = c;
+    }
+    
+  }
+  else if ((a > 0) && (b > 0) && (c <= 0))
+  {
+    *moyenne = ((float)(a + b)) / 2;
+    if (a < b)
+    {
+      *min = a;
+      *max = b;
+    }
+    else
+    {
+      *min = b;
+      *max = a;
+    }
+  }
+  else if ((a > 0) && (b <= 0))
+  {
+    *min = a;
+    *max = a;
+    *moyenne = a;
+  }
+  else
+  {
+    *min = -1;
+    *max = -1;
+    *moyenne = -1;
+  }
 }
 
 void afficher_resultat(float moyenne, int min, int max)

@@ -29,7 +29,7 @@ float moy_temp(float *tab, int lentab)
 
 // question 3
 
-float moyenne_temp_negatif(float *tab, int lentab)
+float moy_temp_gel(float *tab, int lentab)
 {
     int nbJoursNegatifs = 0;
     float temp = 0;

@@ -49,7 +49,9 @@ int racines(int a, int b, int c, float *x1, float *x2)
         if (delta > 0)
         {
             return 2;
-        } else {
+        }
+        else
+        {
             return 1;
         }
     }

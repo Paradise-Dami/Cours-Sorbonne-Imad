@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 // question 1
-int indiceInsert(int *tab, int el, int nbElements, int taille)
+int indiceInsert(int tab[], int el, int nbElements, int taille)
 {
     int indice = 0;
     if (nbElements < taille)
@@ -10,7 +10,7 @@ int indiceInsert(int *tab, int el, int nbElements, int taille)
         {
             indice++;
         }
-        if (tab[indice] == el)
+        if (indice < nbElements && tab[indice] == el)
         {
             return -1;
         }
@@ -21,14 +21,14 @@ int indiceInsert(int *tab, int el, int nbElements, int taille)
 
 // question 2
 
-int insertElt(int *tab, int el, int *nbElements, int taille)
+int insertElt(int tab[], int el, int *nbElements, int taille)
 {
-    int indEl = indiceInsert(tab, taille, *nbElements, taille);
+    int indEl = indiceInsert(tab, el, *nbElements, taille);
     if (indEl == -1)
     {
         return 0;
     }
-    for (int i = taille; i > indEl; i--)
+    for (int i = *nbElements; i > indEl; i--)
     {
         tab[i] = tab[i - 1];
     }
@@ -38,13 +38,14 @@ int insertElt(int *tab, int el, int *nbElements, int taille)
     return 1;
 }
 
-
-
-
 int main()
 {
-    int tab[20] = {0, 1, 3}, taille = 20, nbElements = 3, el = 10;
-    printf("%d\n", indiceInsert(tab, taille, nbElements, el));
+    int tab[5] = {2, 4, 6},
+        taille = 20,
+        nbElements = 3,
+        el = 10;
+    printf("%d\n", indiceInsert(tab, 7, 3, 5));
+    printf("%d\n", indiceInsert(tab, 4, 3, 5));
     insertElt(tab, el, &nbElements, taille);
     for (int k = 0; k < nbElements; k++)
     {

@@ -4,6 +4,68 @@
 #define MIN 2
 #define MAX 3
 
-void generertabbool(int *tab, int max) {
+// question 1
+int generertabbool(int *tab, int max, int min)
+{
+    // on suppose que tab est de longeur max+1
+    int taille = rand() % (max - min + 1) + min;
+    for (int i = 0, i < taille, i++)
+    {
+        tab[i] = rand() % 2;
+    }
+    tab[taille + 1] = -1;
+    return taille;
+}
 
+void affichertab(int *tab, taille)
+{
+    printf("[");
+    for (i = 0, i < taille, i++)
+    {
+        printf("%d ", tab[i]);
+    }
+    printf("]\n");
+}
+
+// question 2
+int compress_tab(int *tab_brut, int *tab_compress)
+{
+    int compteur = 0;
+    int indice_tab_brut = 0;
+    int indice_tab_compresse = 0 int valprec = tab_brut[0];
+    while (tab_brut[indice_tab_brut] != -1)
+    {
+        if (valprec == tab_brut[indice_tab_brut])
+        {
+            compteur++;
+        }
+        else
+        {
+            tab_compress[indice_tab_compresse] = compteur;
+            tab_compress[indice_tab_compresse + 1] = valprec;
+            valprec = tab_brut[indice_tab_brut];
+            compteur = 0;
+            indice_tab_compresse++;
+        }
+        indice_tab_brut++;
+    }
+}
+
+int decompress_tab(int *tab_brut, int tab_compress)
+{
+    //2 chemin de la louette, lyon
+    int compteur = 0;
+    while (tab_compress[compteur] != -1) {
+        for (i = 0, i < tab_compress[compteur], i++) {
+
+        }
+    }
+}
+
+int main()
+{
+    int tabnb[MAX + 1];
+    int taille = generertabbool(tabnb, MAX, MIN);
+    affichertab(tab, taille);
+    return 0;
 }

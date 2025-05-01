@@ -1,5 +1,6 @@
 {
     "files.associations": {
-        "multi_ensembles.h": "c"
+        "multi_ensembles.h": "c",
+        "stdio.h": "c"
     }
 }

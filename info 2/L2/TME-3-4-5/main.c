@@ -85,6 +85,9 @@ void fusion_bibli(Biblio *b1, Biblio *b2)
     liberer_biblio(b2);
 }
 
+
+
+
 int main(int argc, char **argv)
 {
     if (argc != 3)

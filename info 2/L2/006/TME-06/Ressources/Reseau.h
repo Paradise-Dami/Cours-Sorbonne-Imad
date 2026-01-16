@@ -37,5 +37,7 @@ void ecrireReseau(Reseau *R, FILE *f);
 int nbLiaisons(Reseau *R);
 int nbCommodites(Reseau *R);
 void afficheReseauSVG(Reseau *R, char* nomInstance);
+void AssocierVoisins(Noeud *noeud, CellNoeud *precNoeud, CellNoeud *suivNoeud);
+void freeReseau(Reseau *R);
 #endif
 

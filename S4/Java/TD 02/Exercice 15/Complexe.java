@@ -16,7 +16,7 @@ public class Complexe {
     }
 
     public String toString(){
-        return this.reelle + " i" + this.imag;
+        return this.reelle + " + " + this.imag + "i";
     }
 
     public boolean estReel(){
@@ -28,7 +28,9 @@ public class Complexe {
         this.imag = this.imag + c.imag;
     }
     public void multiplication(Complexe c){
-        this.reelle = this.reelle*c.reelle - this.imag*c.imag;
-        this.imag = this.reelle*c.imag + this.imag*c.reelle;
+        double TEMP_REELLE;
+	TEMP_REELLE = (this.reelle*c.reelle) - (this.imag*c.imag);
+        this.imag = (this.reelle*c.imag) + (this.imag*c.reelle);
+	this.reelle = TEMP_REELLE;
     }
 }

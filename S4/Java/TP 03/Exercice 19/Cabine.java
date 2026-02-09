@@ -12,6 +12,6 @@ public class Cabine {
     }
 
     public String toString(){
-        return "Volume, Couleur : " + this.volume + "," + this.couleur;
+        return "Volume : " + this.volume + ", Couleur : " + this.couleur;
     }
 }

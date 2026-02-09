@@ -17,6 +17,6 @@ public class Tracteur {
     }
 
     public String toString(){
-        return "Couleur Cabine : " + this.CabineTracteur.couleur + " blablabla diametre des roues" + this.r1 + this.r2 + this.r3 + this.r4;
+        return "Couleur Cabine : " + this.CabineTracteur.couleur + "; roueGaucheAvant " + this.r1 + "; roueDroiteAvant : " + this.r2 + "; roueGaucheArriere " + this.r3 + "; roueDroiteArriere " + this.r4;
     }
 }

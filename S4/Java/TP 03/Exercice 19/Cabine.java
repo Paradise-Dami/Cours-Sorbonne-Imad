@@ -1,6 +1,6 @@
 public class Cabine {
     private int volume;
-    private String couleur;
+    public String couleur;
     
     public Cabine(int volume, String couleur){
         this.volume = volume;

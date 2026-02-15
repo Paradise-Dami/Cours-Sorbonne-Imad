@@ -15,6 +15,13 @@ public class Triangle{
 	return p1.distance(p2) + p2.distance(p3) + p3.distance(p1);
 	}
 
+	public Triangle copy(){
+		Point a = p1.copy();
+		Point b = p2.copy();
+		Point c = p3.copy();
+		return new Triangle(a,b,c);
+	}
+
 	public String toString(){
 	return "{" + p1 + ";" + p2 + ";" + p3 + "}";
 	}

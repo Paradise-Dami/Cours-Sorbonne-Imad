@@ -15,12 +15,16 @@ public class Point{
 	public double distance(Point p){
 	double deltaX2 = (this.posx-p.posx)*(this.posx-p.posx);
 	double deltaY2 = (this.posy-p.posy)*(this.posy-p.posy);
-	return Math.sqrt(deltaX2 + deltaX2);
+	return Math.sqrt(deltaX2 + deltaY2);
 	}
 
 	public void deplaceToi(int newx, int newy){
 	posx = newx;
 	posy = newy;
+	}
+
+	public Point copy(){
+		return new Point(posx,posy);
 	}
 
 	public String toString(){

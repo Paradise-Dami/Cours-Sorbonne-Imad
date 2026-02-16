@@ -9,4 +9,7 @@ public class Assiette {
     public String toString(){
         return "Assiette " + this.diametre + " cm";
     }
+    public int getDiametre(){
+	return this.diametre;
+    }
 }
